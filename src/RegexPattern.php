@@ -2,16 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Diwms\NginxLogAnalyzer;
+namespace Ritey\NginxLogAnalyzer;
 
-use Diwms\NginxLogAnalyzer\Contracts\Format;
-use Diwms\NginxLogAnalyzer\Contracts\Pattern;
 use function array_push;
 use function array_shift;
 use function explode;
 use function implode;
 use function preg_match;
 use function preg_quote;
+
+use Ritey\NginxLogAnalyzer\Contracts\Format;
+use Ritey\NginxLogAnalyzer\Contracts\Pattern;
+
 use function sprintf;
 
 final class RegexPattern implements Pattern
@@ -19,13 +21,13 @@ final class RegexPattern implements Pattern
     private const CAPTURE_VALUE = '/^(\w*)(.*?)$/';
 
     /** @var array<string> */
-    protected $identifiers = [];
+    private $identifiers = [];
 
-    public function build(Format $format) : string
+    public function build(Format $format): string
     {
         $this->identifiers = [];
 
-        $pieces     = explode('$', $format->getStringRepresentation());
+        $pieces = explode('$', $format->getStringRepresentation());
         $delimiters = [];
 
         array_push($delimiters, array_shift($pieces));
@@ -34,7 +36,7 @@ final class RegexPattern implements Pattern
             preg_match(self::CAPTURE_VALUE, $piece, $token);
 
             $this->identifiers[] = $token[1];
-            $delimiters[]        = preg_quote($token[2]);
+            $delimiters[] = preg_quote($token[2]);
         }
 
         return sprintf('/^%s$/', implode('(.+?)', $delimiters));
@@ -43,7 +45,7 @@ final class RegexPattern implements Pattern
     /**
      * @return array<string>
      */
-    public function getIdentifiers() : array
+    public function getIdentifiers(): array
     {
         return $this->identifiers;
     }

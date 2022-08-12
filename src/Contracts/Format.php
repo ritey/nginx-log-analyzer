@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Diwms\NginxLogAnalyzer\Contracts;
+namespace Ritey\NginxLogAnalyzer\Contracts;
 
 interface Format
 {
-    public function getStringRepresentation() : string;
+    public function getStringRepresentation(): string;
 }

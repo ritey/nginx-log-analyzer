@@ -1,12 +1,12 @@
 {
-    "name": "diwms/nginx-log-analyzer",
+    "name": "ritey/nginx-log-analyzer",
     "description": "Analyze/Parse Nginx log using php",
     "homepage": "https://github.com/diwms/nginx-log-analyzer",
     "license": "MIT",
     "type": "library",
     "version": "1.1.0",
     "require": {
-        "php": "^7.3"
+        "php": "^7.3|^8.0"
     },
     "require-dev": {
         "doctrine/coding-standard": "^6.0",
@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Diwms\\NginxLogAnalyzer\\": "src"
+            "Ritey\\NginxLogAnalyzer\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Diwms\\NginxLogAnalyzer\\Tests\\": "tests"
+            "Ritey\\NginxLogAnalyzer\\Tests\\": "tests"
         }
     },
     "config": {

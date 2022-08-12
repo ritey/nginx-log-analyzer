@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Diwms\NginxLogAnalyzer;
+namespace Ritey\NginxLogAnalyzer;
 
-use Diwms\NginxLogAnalyzer\Contracts\Format;
+use Ritey\NginxLogAnalyzer\Contracts\Format;
 
 final class NginxAccessLogFormat implements Format
 {
-    public function getStringRepresentation() : string
+    public function getStringRepresentation(): string
     {
         return '$remote_addr - $remote_user [$time_local] "$request" $status $bytes_sent "$http_referer" "$http_user_agent"';
     }

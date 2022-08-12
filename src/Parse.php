@@ -2,16 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Diwms\NginxLogAnalyzer;
+namespace Ritey\NginxLogAnalyzer;
 
-use Diwms\NginxLogAnalyzer\Contracts\Format;
-use Diwms\NginxLogAnalyzer\Contracts\Parsable;
-use Diwms\NginxLogAnalyzer\Contracts\Pattern;
-use Diwms\NginxLogAnalyzer\Exceptions\Line;
 use function array_combine;
 use function array_shift;
 use function count;
 use function preg_match;
+
+use Ritey\NginxLogAnalyzer\Contracts\Format;
+use Ritey\NginxLogAnalyzer\Contracts\Parsable;
+use Ritey\NginxLogAnalyzer\Contracts\Pattern;
+use Ritey\NginxLogAnalyzer\Exceptions\Line;
+
 use function trim;
 
 final class Parse implements Parsable
@@ -24,13 +26,13 @@ final class Parse implements Parsable
 
     public function __construct(Format $format, Pattern $pattern)
     {
-        $this->format  = $format;
+        $this->format = $format;
         $this->pattern = $pattern;
     }
 
-    public function line(string $line) : object
+    public function line(string $line): object
     {
-        if (trim($line) === '') {
+        if ('' === trim($line)) {
             throw Line::isEmpty();
         }
 

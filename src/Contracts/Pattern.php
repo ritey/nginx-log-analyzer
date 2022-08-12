@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Diwms\NginxLogAnalyzer\Contracts;
+namespace Ritey\NginxLogAnalyzer\Contracts;
 
 interface Pattern
 {
-    public function build(Format $format) : string;
+    public function build(Format $format): string;
 
     /**
      * @return array<string>
      */
-    public function getIdentifiers() : array;
+    public function getIdentifiers(): array;
 }

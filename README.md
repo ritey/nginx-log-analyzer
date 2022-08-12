@@ -1,18 +1,18 @@
 # nginx-log-analyzer
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/diwms/nginx-log-analyzer.svg?style=flat-square)](https://packagist.org/packages/diwms/nginx-log-analyzer)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/ritey/nginx-log-analyzer.svg?style=flat-square)](https://packagist.org/packages/ritey/nginx-log-analyzer)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/diwms/nginx-log-analyzer/master.svg?style=flat-square)](https://travis-ci.org/diwms/nginx-log-analyzer)
+[![Build Status](https://img.shields.io/travis/ritey/nginx-log-analyzer/master.svg?style=flat-square)](https://travis-ci.org/ritey/nginx-log-analyzer)
 [![StyleCI](https://github.styleci.io/repos/216911317/shield?branch=master)](https://github.styleci.io/repos/216911317)
-[![Coverage](https://img.shields.io/coveralls/github/diwms/nginx-log-analyzer?style=flat-square)](https://coveralls.io/github/diwms/nginx-log-analyzer)
-[![Total Downloads](https://img.shields.io/packagist/dt/diwms/nginx-log-analyzer.svg?style=flat-square)](https://packagist.org/packages/diwms/nginx-log-analyzer)
+[![Coverage](https://img.shields.io/coveralls/github/ritey/nginx-log-analyzer?style=flat-square)](https://coveralls.io/github/ritey/nginx-log-analyzer)
+[![Total Downloads](https://img.shields.io/packagist/dt/ritey/nginx-log-analyzer.svg?style=flat-square)](https://packagist.org/packages/ritey/nginx-log-analyzer)
 
 ---
 
 ## Installation
 
 ```bash
-composer require diwms/nginx-log-analyzer
+composer require ritey/nginx-log-analyzer
 ```
 
 ## Usage
@@ -21,9 +21,9 @@ composer require diwms/nginx-log-analyzer
 
 declare(strict_types=1);
 
-use Diwms\NginxLogAnalyzer\Parse;
-use Diwms\NginxLogAnalyzer\NginxAccessLogFormat;
-use Diwms\NginxLogAnalyzer\RegexPattern;
+use Ritey\NginxLogAnalyzer\Parse;
+use Ritey\NginxLogAnalyzer\NginxAccessLogFormat;
+use Ritey\NginxLogAnalyzer\RegexPattern;
 
 $file = new SplFileObject('access.log');
 $line = $file->fgets();

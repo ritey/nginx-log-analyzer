@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Diwms\NginxLogAnalyzer\Contracts;
+namespace Ritey\NginxLogAnalyzer\Contracts;
 
 interface Parsable
 {
-    public function line(string $line) : object;
+    public function line(string $line): object;
 }
